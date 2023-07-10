@@ -4,11 +4,12 @@
 class Control
 {
 public:
-	Control(HWND handle_to_control);
+	Control(HWND handle_to_control) : m_handle_to_control(handle_to_control) {}
 	virtual ~Control() = default;
 	Control(Control&&) = default;
 	Control& operator=(Control&&) = default;
+	virtual void HandleEvent(UINT message, WPARAM wParam, LPARAM lParam) {}
 
-private:
-	HWND handle_to_control = nullptr;
+protected:
+	HWND m_handle_to_control = nullptr;
 };

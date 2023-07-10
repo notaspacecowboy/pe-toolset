@@ -1,5 +1,7 @@
 ﻿#pragma once
 #include "app_window.h"
+#include "button.h"
+#include "list_view.h"
 
 class MainWindow: public AppWindow
 {
@@ -16,10 +18,16 @@ private:
 	void OnExePackBtnClick();
 	void OnAboutBtnClick();
 	void OnExitBtnClick();
+	void OnProcessListItemSelect(int index);
 
-	void InitListViews();
+	void RefreshListViews();
 
 private:
-	HWND m_process_list_view = nullptr;
-	HWND m_module_list_view = nullptr;
+	ListView* m_process_list_view;
+	ListView* m_module_list_view;
+	Button* m_process_view_btn;
+	Button* m_dll_injection_btn;
+	Button* m_exe_pack_btn;
+	Button* m_about_btn;
+	Button* m_exit_btn;
 };

@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <functional>
 #include <vector>
 
 #include "control.h"
@@ -27,13 +28,32 @@ private:
 
 class ListView: public Control
 {
+	using ItemSelectCallBack = std::function<void(int)>;
+
+public:
+	enum class Style
+	{
+		k_full_row_select = 0x00000020,
+	};
+
 public:
 	ListView(HWND handle_to_control);
 	~ListView() override = default;
 
+	void SetStyle(ListView::Style style);
+	void AddColumn(LPCTSTR column_name, int width);
 	void AddItem(ListViewItem&& item);
 	void RemoveItem(int index);
 	ListViewItem GetItem(int index);
 	void SetItem(int index, ListViewItem&& item);
 	void Clear();
+
+	void AddItemSelectListener(ItemSelectCallBack);
+	void ClearItemSelectListeners();
+
+	void HandleEvent(UINT message, WPARAM wParam, LPARAM lParam) override;
+
+private:
+	std::vector<LPCTSTR> m_column_names;
+	std::vector<ItemSelectCallBack> m_item_select_call_backs;
 };
