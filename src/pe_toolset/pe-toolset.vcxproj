@@ -35,7 +35,7 @@
     <ProjectReference Include="..\utilities\utilities.vcxproj">
       <Project>{965e9d62-9003-44e2-a852-3cc7a1029f78}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\win_control\win32.vcxproj">
+    <ProjectReference Include="..\win_control\win_control.vcxproj">
       <Project>{92c44061-9672-44e3-a4cd-a9ebe8f8605a}</Project>
     </ProjectReference>
   </ItemGroup>
