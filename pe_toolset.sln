@@ -7,7 +7,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pet_toolset", "src\pe_tools
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "utilities", "src\utilities\utilities.vcxproj", "{965E9D62-9003-44E2-A852-3CC7A1029F78}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "win32", "src\win32\win32.vcxproj", "{92C44061-9672-44E3-A4CD-A9EBE8F8605A}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "win_control", "src\win_control\win32.vcxproj", "{92C44061-9672-44E3-A4CD-A9EBE8F8605A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
