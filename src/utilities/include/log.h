@@ -7,7 +7,7 @@
 class Log
 {
 public:
-    static void DebugPrintf(const TCHAR* format, ...)
+    static void DebugPrintf(const wchar_t* format, ...)
     {
         TCHAR buffer[1024];
         va_list argptr;

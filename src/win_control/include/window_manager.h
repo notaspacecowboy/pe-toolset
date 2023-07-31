@@ -15,8 +15,8 @@ class WindowManager: public Singleton<WindowManager>
 public:
 	void Init(HINSTANCE handle_to_app);
 
-	template<typename TWindow>
-	void CreateAppWindow(DWORD window_id);
+	template<typename TWindow, typename ...Args>
+	void CreateAppWindow(int window_id, Args&&... args);
 
 	void DestroyAppWindow(AppWindow* window);
 	
@@ -33,12 +33,12 @@ private:
 	static INT_PTR CALLBACK WindowEventProcess(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
 };
 
-template<typename TWindow>
-void WindowManager::CreateAppWindow(DWORD window_id)
+template<typename TWindow, typename ...Args>
+void WindowManager::CreateAppWindow(int window_id, Args&&... args)
 {
 	HWND hDialog;
 	hDialog = CreateDialog(m_handle_to_app, MAKEINTRESOURCE(window_id), NULL, (DLGPROC)WindowEventProcess);
-	m_active_windows[hDialog] = std::make_unique<TWindow>(hDialog);
+	m_active_windows[hDialog] = std::make_unique<TWindow>(hDialog, args...);
 	m_active_windows[hDialog]->OnCreate();
 
 	ShowWindow(hDialog, SW_SHOW);

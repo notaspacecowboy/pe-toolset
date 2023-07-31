@@ -25,7 +25,7 @@ INT_PTR WindowManager::WindowEventProcess(HWND hWnd, UINT message, WPARAM wParam
 {
 	if (message == WM_INITDIALOG)
 	{
-		Log::DebugPrintf(TEXT("new dialog created"));
+		Log::DebugPrintf(L"new dialog created");
 	}
 
 	auto& all_windows = WindowManager::instance().active_windows();

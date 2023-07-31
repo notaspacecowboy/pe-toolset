@@ -12,7 +12,7 @@ void ListView::SetStyle(ListView::Style style)
 }
 
 
-void ListView::AddColumn(LPCTSTR column_name, int width)
+void ListView::AddColumn(std::wstring column_name, int width)
 {
 	ListView_SetExtendedListViewStyle(m_handle_to_control, LVS_EX_FULLROWSELECT);
 
@@ -20,7 +20,7 @@ void ListView::AddColumn(LPCTSTR column_name, int width)
 	column.mask = LVCF_FMT | LVCF_WIDTH | LVCF_TEXT | LVCF_SUBITEM;
 	column.fmt = LVCFMT_LEFT;
 	column.cx = width;
-	column.pszText = (LPTSTR)column_name;
+	column.pszText = (LPTSTR)column_name.c_str();
 	ListView_InsertColumn(m_handle_to_control, m_column_names.size(), &column);
 	m_column_names.push_back(column_name);
 }
@@ -31,11 +31,11 @@ void ListView::AddItem(ListViewItem&& item)
 	lv_item.mask = LVIF_TEXT;
 	lv_item.iItem = item.index();
 	lv_item.iSubItem = 0;
-	lv_item.pszText = item.GetField(0);
+	lv_item.pszText = (LPWSTR)item[0].c_str();
 	ListView_InsertItem(m_handle_to_control, &lv_item);
-	for (int i = 1; i < m_column_names.size(); ++i)
+	for (int i = 1; i < min(item.Size(), m_column_names.size()); ++i)
 	{
-		ListView_SetItemText(m_handle_to_control, lv_item.iItem, i, item.GetField(i));
+		ListView_SetItemText(m_handle_to_control, lv_item.iItem, i, (LPWSTR)item[i].c_str());
 	}
 }
 
@@ -49,12 +49,23 @@ void ListView::SetItem(int index, ListViewItem&& item)
 
 ListViewItem ListView::GetItem(int index)
 {
-	return ListViewItem();
+	ListViewItem item;
+	LVITEM lvi;
+	memset(&lvi, 0, sizeof(LVITEM));
+	for(int i = 0; i < m_column_names.size(); ++i)
+	{
+		TCHAR buffer[100] = { 0 };
+		ListView_GetItemText(m_handle_to_control, index, i, buffer, sizeof(buffer));
+		item.AddField(buffer);
+	}
+
+	return item;
 }
 
 
 void ListView::Clear()
 {
+	ListView_DeleteAllItems(m_handle_to_control);
 }
 
 

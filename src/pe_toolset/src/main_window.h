@@ -30,4 +30,6 @@ private:
 	Button* m_exe_pack_btn;
 	Button* m_about_btn;
 	Button* m_exit_btn;
+
+	int m_selected_index;
 };

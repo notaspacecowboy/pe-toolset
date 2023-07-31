@@ -19,33 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\pe_modifier.h" />
+    <ClInclude Include="include\pe_utilities.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\pe_modifier.cpp" />
+    <ClCompile Include="src\pe_utilities.cpp" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\utilities\utilities.vcxproj">
       <Project>{965e9d62-9003-44e2-a852-3cc7a1029f78}</Project>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="include\button.h" />
-    <ClInclude Include="include\control.h" />
-    <ClInclude Include="include\app_window.h" />
-    <ClInclude Include="include\input_field.h" />
-    <ClInclude Include="include\process.h" />
-    <ClInclude Include="include\window_manager.h" />
-    <ClInclude Include="include\list_view.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\button.cpp" />
-    <ClCompile Include="src\input_field.cpp" />
-    <ClCompile Include="src\list_view.cpp" />
-    <ClCompile Include="src\app_window.cpp" />
-    <ClCompile Include="src\window_manager.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{92c44061-9672-44e3-a4cd-a9ebe8f8605a}</ProjectGuid>
-    <RootNamespace>win_control</RootNamespace>
+    <ProjectGuid>{b8f74838-e04f-4d21-b91a-2a39a0eca1fa}</ProjectGuid>
+    <RootNamespace>pemodifier</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>win_control</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -93,20 +84,20 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>D:\projects\pe-toolset\src\utilities\include;D:\projects\pe-toolset\src\win_control\include;D:\projects\pe-toolset\src\win_control\src;$(IncludePath)</IncludePath>
-    <OutDir>..\..\lib</OutDir>
+    <IncludePath>D:\projects\pe-toolset\src\pe_modifier\include;D:\projects\pe-toolset\src\pe_modifier\src;D:\projects\pe-toolset\src\utilities\include;$(IncludePath)</IncludePath>
+    <OutDir>../../lib</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>D:\projects\pe-toolset\src\utilities\include;D:\projects\pe-toolset\src\win_control\include;D:\projects\pe-toolset\src\win_control\src;$(IncludePath)</IncludePath>
-    <OutDir>..\..\lib</OutDir>
+    <IncludePath>D:\projects\pe-toolset\src\pe_modifier\include;D:\projects\pe-toolset\src\pe_modifier\src;D:\projects\pe-toolset\src\utilities\include;$(IncludePath)</IncludePath>
+    <OutDir>../../lib</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\projects\pe-toolset\src\utilities\include;D:\projects\pe-toolset\src\win_control\include;D:\projects\pe-toolset\src\win_control\src;$(IncludePath)</IncludePath>
-    <OutDir>..\..\lib</OutDir>
+    <IncludePath>D:\projects\pe-toolset\src\pe_modifier\include;D:\projects\pe-toolset\src\pe_modifier\src;D:\projects\pe-toolset\src\utilities\include;$(IncludePath)</IncludePath>
+    <OutDir>../../lib</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>D:\projects\pe-toolset\src\utilities\include;D:\projects\pe-toolset\src\win_control\include;D:\projects\pe-toolset\src\win_control\src;$(IncludePath)</IncludePath>
-    <OutDir>..\..\lib</OutDir>
+    <IncludePath>D:\projects\pe-toolset\src\pe_modifier\include;D:\projects\pe-toolset\src\pe_modifier\src;D:\projects\pe-toolset\src\utilities\include;$(IncludePath)</IncludePath>
+    <OutDir>../../lib</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -115,8 +106,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>
-      </PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -133,8 +123,7 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>
-      </PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -151,8 +140,7 @@
       <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>
-      </PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -169,8 +157,7 @@
       <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
-      <PrecompiledHeaderFile>
-      </PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>

@@ -15,7 +15,7 @@ public:
 	virtual void OnClose() = 0;
 	INT_PTR CALLBACK WindowEventProcess(UINT message, WPARAM wParam, LPARAM lParam);
 	template<typename TControl>
-	TControl* GetControl(int control_id);
+	TControl* GetControl(DWORD control_id);
 
 	HWND handle_to_window() const { return m_handle_to_window; }
 
@@ -29,7 +29,7 @@ protected:
 
 
 template<typename TControl>
-TControl* AppWindow::GetControl(int control_id)
+TControl* AppWindow::GetControl(DWORD control_id)
 {
 	HWND handle_to_control = GetDlgItem(m_handle_to_window, control_id);
 	assert(handle_to_control != nullptr);

@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pet_toolset", "src\pe_toolset\pe-toolset.vcxproj", "{BE263825-EBE0-459E-AD74-0B9F1A18B3DA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pe_toolset", "src\pe_toolset\pe-toolset.vcxproj", "{BE263825-EBE0-459E-AD74-0B9F1A18B3DA}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "utilities", "src\utilities\utilities.vcxproj", "{965E9D62-9003-44E2-A852-3CC7A1029F78}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "win_control", "src\win_control\win_control.vcxproj", "{92C44061-9672-44E3-A4CD-A9EBE8F8605A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pe_modifier", "src\pe_modifier\pe_modifier.vcxproj", "{B8F74838-E04F-4D21-B91A-2A39A0ECA1FA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,14 @@ Global
 		{92C44061-9672-44E3-A4CD-A9EBE8F8605A}.Release|x64.Build.0 = Release|x64
 		{92C44061-9672-44E3-A4CD-A9EBE8F8605A}.Release|x86.ActiveCfg = Release|Win32
 		{92C44061-9672-44E3-A4CD-A9EBE8F8605A}.Release|x86.Build.0 = Release|Win32
+		{B8F74838-E04F-4D21-B91A-2A39A0ECA1FA}.Debug|x64.ActiveCfg = Debug|x64
+		{B8F74838-E04F-4D21-B91A-2A39A0ECA1FA}.Debug|x64.Build.0 = Debug|x64
+		{B8F74838-E04F-4D21-B91A-2A39A0ECA1FA}.Debug|x86.ActiveCfg = Debug|Win32
+		{B8F74838-E04F-4D21-B91A-2A39A0ECA1FA}.Debug|x86.Build.0 = Debug|Win32
+		{B8F74838-E04F-4D21-B91A-2A39A0ECA1FA}.Release|x64.ActiveCfg = Release|x64
+		{B8F74838-E04F-4D21-B91A-2A39A0ECA1FA}.Release|x64.Build.0 = Release|x64
+		{B8F74838-E04F-4D21-B91A-2A39A0ECA1FA}.Release|x86.ActiveCfg = Release|Win32
+		{B8F74838-E04F-4D21-B91A-2A39A0ECA1FA}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
