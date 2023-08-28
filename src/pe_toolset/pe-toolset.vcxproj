@@ -105,7 +105,7 @@
     <IncludePath>D:\projects\pe-toolset\src\utilities\include;D:\projects\pe-toolset\src\pe_toolset\src;D:\projects\pe-toolset\src\win_control\include;D:\projects\pe-toolset\src\pe_toolset;D:\projects\pe-toolset\src\pe_modifier\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\projects\pe-toolset\src\utilities\include;D:\projects\pe-toolset\src\pe_toolset\src;D:\projects\pe-toolset\src\win_control\include;D:\projects\pe-toolset\src\pe_toolset;D:\projects\pe-toolset\src\pe_modifier\include;$(IncludePath)</IncludePath>
+    <IncludePath>.;include;src;..\utilities\include;..\pe_modifier\include;..\win_control\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <IncludePath>D:\projects\pe-toolset\src\utilities\include;D:\projects\pe-toolset\src\pe_toolset\src;D:\projects\pe-toolset\src\win_control\include;D:\projects\pe-toolset\src\pe_toolset;D:\projects\pe-toolset\src\pe_modifier\include;$(IncludePath)</IncludePath>
@@ -158,7 +158,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\projects\pe-toolset\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\..\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>win_control.lib;pe_modifier.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ProjectReference>

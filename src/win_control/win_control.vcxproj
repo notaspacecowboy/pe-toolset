@@ -101,7 +101,7 @@
     <OutDir>..\..\lib</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\projects\pe-toolset\src\utilities\include;D:\projects\pe-toolset\src\win_control\include;D:\projects\pe-toolset\src\win_control\src;$(IncludePath)</IncludePath>
+    <IncludePath>..\utilities\include;include;src;$(IncludePath)</IncludePath>
     <OutDir>..\..\lib</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

@@ -92,7 +92,7 @@
     <OutDir>../../lib</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\projects\pe-toolset\src\pe_modifier\include;D:\projects\pe-toolset\src\pe_modifier\src;D:\projects\pe-toolset\src\utilities\include;$(IncludePath)</IncludePath>
+    <IncludePath>include;src;..\utilities\include;$(IncludePath)</IncludePath>
     <OutDir>../../lib</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
