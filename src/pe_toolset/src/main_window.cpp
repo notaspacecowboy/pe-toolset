@@ -10,6 +10,7 @@
 #include "log.h"
 #include "window_manager.h"
 #include "pe_viewer_window.h"
+#include "executable_packer_window.h"
 #include <sstream>
 
 MainWindow::MainWindow(HWND handle_to_window)
@@ -75,6 +76,15 @@ void MainWindow::OnCreate()
 
 void MainWindow::OnClose()
 {
+	std::list<AppWindow*> all_windows;
+	WindowManager::instance().GetAllActiveWindows(all_windows);
+	for(auto window: all_windows)
+	{
+		if (window == this)
+			continue;
+		window->Close();
+	}
+
 	App::instance().Terminate();
 }
 
@@ -124,6 +134,8 @@ void MainWindow::OnDllInjectionBtnClick()
 void MainWindow::OnExePackBtnClick()
 {
 	Log::DebugPrintf(L"EXE pack button clicked\n");
+
+	WindowManager::instance().CreateAppWindow<ExecutablePackerWindow>(IDD_EXECUTABLE_PACKING_WINDOW);
 }
 
 void MainWindow::OnAboutBtnClick()

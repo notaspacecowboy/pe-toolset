@@ -10,7 +10,7 @@ void WindowManager::Init(HINSTANCE handle_to_app)
 
 void WindowManager::DestroyAppWindow(AppWindow* window)
 {
-	auto& all_windows = WindowManager::instance().active_windows();
+	auto& all_windows = WindowManager::instance().m_active_windows;
 	auto handle_to_window = window->handle_to_window();
 	if (all_windows.find(handle_to_window) == all_windows.end())
 		return;
@@ -21,14 +21,21 @@ void WindowManager::DestroyAppWindow(AppWindow* window)
 }
 
 
+void WindowManager::GetAllActiveWindows(std::list<AppWindow*>& list)
+{
+	list.clear();
+	for(auto& pair: WindowManager::instance().m_active_windows)
+		list.push_back(pair.second.get());
+}
+
+
+
 INT_PTR WindowManager::WindowEventProcess(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
 	if (message == WM_INITDIALOG)
-	{
 		Log::DebugPrintf(L"new dialog created");
-	}
 
-	auto& all_windows = WindowManager::instance().active_windows();
+	auto& all_windows = WindowManager::instance().m_active_windows;
 	if (all_windows.find(hWnd) == all_windows.end())
 		return DefWindowProc(hWnd, message, wParam, lParam);
 

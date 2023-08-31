@@ -33,6 +33,9 @@
     <ClCompile Include="src\directory_window.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\executable_packer_window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\app.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\directory_window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="executable_packer_window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

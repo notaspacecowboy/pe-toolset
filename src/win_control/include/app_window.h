@@ -16,10 +16,7 @@ public:
 	INT_PTR CALLBACK WindowEventProcess(UINT message, WPARAM wParam, LPARAM lParam);
 	template<typename TControl>
 	TControl* GetControl(DWORD control_id);
-
 	HWND handle_to_window() const { return m_handle_to_window; }
-
-protected:
 	void Close();
 
 protected:

@@ -27,14 +27,18 @@
     <ClInclude Include="include\button.h" />
     <ClInclude Include="include\control.h" />
     <ClInclude Include="include\app_window.h" />
+    <ClInclude Include="include\file_browser.h" />
     <ClInclude Include="include\input_field.h" />
+    <ClInclude Include="include\label.h" />
     <ClInclude Include="include\process.h" />
     <ClInclude Include="include\window_manager.h" />
     <ClInclude Include="include\list_view.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\button.cpp" />
+    <ClCompile Include="src\file_browser.cpp" />
     <ClCompile Include="src\input_field.cpp" />
+    <ClCompile Include="src\label.cpp" />
     <ClCompile Include="src\list_view.cpp" />
     <ClCompile Include="src\app_window.cpp" />
     <ClCompile Include="src\window_manager.cpp" />

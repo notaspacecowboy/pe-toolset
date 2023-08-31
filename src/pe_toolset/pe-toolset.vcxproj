@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\directory_window.cpp" />
+    <ClCompile Include="src\executable_packer_window.cpp" />
     <ClCompile Include="src\main_window.cpp" />
     <ClCompile Include="src\app.cpp" />
     <ClCompile Include="src\main.cpp" />
@@ -27,6 +28,7 @@
     <ClCompile Include="src\section_window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="executable_packer_window.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="src\directory_window.h" />
     <ClInclude Include="src\pe_viewer_window.h" />

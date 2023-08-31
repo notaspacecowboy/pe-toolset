@@ -17,10 +17,8 @@ public:
 
 	template<typename TWindow, typename ...Args>
 	void CreateAppWindow(int window_id, Args&&... args);
-
 	void DestroyAppWindow(AppWindow* window);
-	
-	std::unordered_map<HWND, std::unique_ptr<AppWindow>>& active_windows() { return m_active_windows; }
+	void GetAllActiveWindows(std::list<AppWindow*>& list);
 
 private:
 	WindowManager() = default;
